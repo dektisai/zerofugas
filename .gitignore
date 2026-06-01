@@ -1,0 +1,10 @@
+.vercel/
+node_modules/
+.DS_Store
+*.log
+.env
+
+# Ficheiros internos Dektis — não publicar (repo público)
+CLAUDE.md
+docs/
+assets/servicos/_old/

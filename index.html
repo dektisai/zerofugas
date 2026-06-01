@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zero Fugas — Detecção e Reparação de Fugas de Água | Porto · Lisboa</title>
+  <meta name="description" content="Detecção e reparação de fugas de água desde 1999, sem partir paredes. Técnicos credenciados, garantia de sucesso. Porto, Lisboa e toda a Península Ibérica.">
+  <link rel="canonical" href="https://zerofugas.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:title" content="Zero Fugas — Detecção e Reparação de Fugas de Água">
+  <meta property="og:description" content="Encontramos a fuga sem partir as suas paredes. Desde 1999, em toda a Península Ibérica.">
+  <meta property="og:url" content="https://zerofugas.com/">
+  <meta property="og:image" content="https://picsum.photos/seed/zerofugas-og/1200/630">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cpath%20d='M23%208%20H51%20a7%207%200%200%201%207%207%20V39%20a7%207%200%200%201%20-7%207%20H30%20L14%2058%20V15%20a7%207%200%200%201%207%20-7%20Z'%20fill='%23cfe2f4'/%3E%3Ctext%20x='35'%20y='37'%20font-family='Arial,Helvetica,sans-serif'%20font-size='25'%20font-weight='800'%20fill='%23f84f27'%20text-anchor='middle'%3EZE%3C/text%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              blue: '#0c4da2',
+              dark: '#062B45',
+              orange: '#f84f27',
+              cyan: '#158CBA',
+              sky: '#75CAEB',
+            },
+            ink: '#212529',
+            mist: '#F6F8FB',
+          },
+          maxWidth: { '8xl': '1400px' },
+        }
+      }
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Plumber",
+   "name":"Zero Fugas - Detecção e Reparação de Fugas de Água",
+   "description":"Detecção e reparação não-destrutiva de fugas de água desde 1999.",
+   "url":"https://zerofugas.com/",
+   "telephone":"+351914383288",
+   "email":"geral@zerofugas.com",
+   "priceRange":"€€",
+   "foundingDate":"1999",
+   "areaServed":["Viana do Castelo","Braga","Vila Real","Porto","Aveiro","Viseu","Coimbra","Leiria","Santarém","Lisboa","Portugal","Espanha"],
+   "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"},
+   "address":[
+     {"@type":"PostalAddress","streetAddress":"Rua Daciano Baptista Marques, 245 – 2º","addressLocality":"Vila Nova de Gaia","postalCode":"4400-617","addressCountry":"PT"},
+     {"@type":"PostalAddress","streetAddress":"Avenida da Liberdade, 110 – 1º","addressLocality":"Lisboa","postalCode":"1269-046","addressCountry":"PT"}
+   ]}
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+    .fade-in { opacity: 0; transform: translateY(2rem); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
+    .tilt { transition: transform .35s cubic-bezier(.22,.61,.36,1); transform-style: preserve-3d; will-change: transform; }
+    .water-grad { background: linear-gradient(135deg, #062B45 0%, #0c4da2 45%, #158CBA 100%); }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .floaty { animation: floaty 5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { opacity: 1 !important; transform: none !important; transition: none; }
+      .floaty { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+    /* Navbar color states (transparent over dark hero → solid white on scroll) */
+    #nav .nav-logo { color: #fff; }
+    #nav .nav-links a { color: rgba(255,255,255,.85); }
+    #nav.scrolled { background: #fff; box-shadow: 0 4px 20px rgba(6,43,69,.08); }
+    #nav.scrolled .nav-logo { color: #062B45; }
+    #nav.scrolled .nav-links a { color: rgba(33,37,41,.78); }
+    #nav.scrolled .nav-links a:hover { color: #0c4da2; }
+    /* Wordmark logo (recreates ZEROFUGAS) */
+    .brand-word { font-weight: 900; letter-spacing: -.03em; line-height: .92; display: inline-flex; align-items: baseline; }
+    .brand-zero {
+      color: #f84f27; -webkit-text-fill-color: #f84f27;
+      background-image: repeating-linear-gradient(180deg, transparent 0 2.4px, #fff 2.4px 3.7px);
+      -webkit-background-clip: text; background-clip: text;
+    }
+    #nav.scrolled .brand-sub { color: #062B45; }
+    /* DEKTIS-DEMO-WATERMARK:START — remover na versão final (skill versao-final) */
+    .dektis-demo-wm{position:fixed;inset:0;z-index:55;pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='200'%3E%3Ctext x='8' y='150' transform='rotate(-24 8 150)' font-family='Outfit,Arial,sans-serif' font-size='28' font-weight='800' fill='rgba(99,120,145,0.14)'%3EDEKTIS DEMO%3C/text%3E%3C/svg%3E");
+      background-repeat:repeat;}
+    .dektis-demo-badge{position:fixed;left:18px;bottom:18px;z-index:56;display:flex;flex-direction:column;line-height:1.05;
+      background:rgba(6,43,69,.92);color:#E6F1FB;padding:8px 14px;border-radius:12px;text-decoration:none;
+      font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+      box-shadow:0 10px 28px rgba(6,43,69,.4);border:1px solid rgba(133,183,235,.45);}
+    .dektis-demo-badge strong{color:#378ADD;font-size:15px;letter-spacing:.05em;margin-top:3px;font-weight:900;}
+    .dektis-demo-badge:hover{background:#062B45;border-color:#378ADD;}
+    @media print{.dektis-demo-wm,.dektis-demo-badge{display:none}}
+    /* DEKTIS-DEMO-WATERMARK:END */
+  </style>
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+
+  <!-- DEKTIS-DEMO-WATERMARK:START — remover na versão final (skill versao-final) -->
+  <div aria-hidden="true" class="dektis-demo-wm"></div>
+  <a href="https://dektis.eu" target="_blank" rel="noopener" class="dektis-demo-badge" aria-label="Versão de demonstração — Dektis">
+    <span>Versão demonstração</span><strong>DEKTIS</strong>
+  </a>
+  <!-- DEKTIS-DEMO-WATERMARK:END -->
+
+  <!-- Sticky mobile call bar -->
+  <a href="tel:+351914383288" class="md:hidden fixed top-0 inset-x-0 z-50 bg-brand-orange text-white font-semibold text-center py-3 flex items-center justify-center gap-2 shadow-lg active:translate-y-[1px]">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.5 15.5 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+    Ligar agora — 914 383 288
+  </a>
+
+  <!-- Navbar -->
+  <header id="nav" class="fixed top-0 md:top-0 mt-11 md:mt-0 inset-x-0 z-40 transition-all duration-300">
+    <div class="max-w-8xl mx-auto px-5 lg:px-8">
+      <div id="navbar" class="flex items-center justify-between h-16 md:h-20 transition-all duration-300">
+        <a href="index.html" class="flex flex-col leading-none group" aria-label="Zero Fugas — início">
+          <span class="brand-word text-2xl md:text-[26px] group-hover:scale-[1.02] transition-transform origin-left">
+            <span class="brand-zero">ZERO</span><span class="nav-logo">FUGAS</span>
+          </span>
+          <span class="brand-sub block text-[9px] md:text-[10px] uppercase tracking-[0.18em] font-bold text-brand-sky mt-0.5">Soluções de Engenharia</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium nav-links">
+          <a href="index.html" class="hover:text-brand-blue transition-colors">Início</a>
+          <a href="servicos.html" class="hover:text-brand-blue transition-colors">Serviços</a>
+          <a href="index.html#cobertura" class="hover:text-brand-blue transition-colors">Cobertura</a>
+          <a href="index.html#porque" class="hover:text-brand-blue transition-colors">Porquê nós</a>
+          <a href="contactos.html" class="hover:text-brand-blue transition-colors">Contactos</a>
+        </nav>
+
+        <a href="tel:+351914383288" class="hidden md:inline-flex items-center gap-2 bg-brand-orange text-white font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.5 15.5 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+          914 383 288
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative min-h-[100dvh] flex items-center overflow-hidden water-grad pt-28 md:pt-20">
+    <div id="vanta-bg" class="absolute inset-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-brand-dark/30 to-brand-dark/70 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-8xl mx-auto px-5 lg:px-8 w-full grid lg:grid-cols-12 gap-10 items-center py-16">
+      <div class="lg:col-span-7 text-white">
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur border border-white/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-sky">
+          <span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+          Desde 1999 · Toda a Península Ibérica
+        </span>
+        <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.04]">
+          Encontramos a fuga <span class="text-brand-sky">sem partir</span> as suas paredes.
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-white/85 max-w-xl leading-relaxed">
+          Detecção e reparação de fugas de água com tecnologia não-destrutiva. Localizamos a origem exacta antes de tocar numa parede. <span class="font-semibold text-white">Garantia de sucesso.</span>
+        </p>
+
+        <div class="mt-9 flex flex-col sm:flex-row gap-4">
+          <a href="tel:+351914383288" id="magnetic" class="group inline-flex items-center justify-center gap-3 bg-brand-orange text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl shadow-brand-orange/30 hover:shadow-2xl transition-all active:scale-[0.98]">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.5 15.5 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+            <span class="flex flex-col items-start leading-none"><span class="text-[11px] font-medium uppercase tracking-wider opacity-90">Ligue já</span><span>914 383 288</span></span>
+          </a>
+          <a href="contactos.html" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur border border-white/30 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/20 transition-all active:scale-[0.98]">
+            Pedir orçamento
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-white/80">
+          <span class="flex items-center gap-2"><svg class="w-5 h-5 text-brand-sky" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Técnicos credenciados</span>
+          <span class="flex items-center gap-2"><svg class="w-5 h-5 text-brand-sky" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Métodos não-destrutivos</span>
+          <span class="flex items-center gap-2"><svg class="w-5 h-5 text-brand-sky" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Porto · Lisboa</span>
+        </div>
+      </div>
+
+      <!-- Floating stat card -->
+      <div class="lg:col-span-5 hidden lg:block">
+        <div class="floaty ml-auto max-w-sm rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl p-7 text-white">
+          <div class="flex items-center gap-3 text-brand-sky">
+            <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+            <span class="text-sm font-semibold uppercase tracking-wider">Diagnóstico de precisão</span>
+          </div>
+          <p class="mt-5 text-2xl font-bold leading-snug">Pesquisa acústica, termográfica e por gás traçador.</p>
+          <p class="mt-3 text-white/75 leading-relaxed">Combinamos várias tecnologias até localizar a fuga ao centímetro — depois reparamos.</p>
+          <div class="mt-6 grid grid-cols-2 gap-4 border-t border-white/15 pt-5">
+            <div><div class="text-3xl font-extrabold">26</div><div class="text-xs uppercase tracking-wider text-white/60">anos de campo</div></div>
+            <div><div class="text-3xl font-extrabold">6</div><div class="text-xs uppercase tracking-wider text-white/60">técnicas</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#numeros" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 hover:text-white transition-colors" aria-label="Descer">
+      <svg class="w-7 h-7 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- Stats / números -->
+  <section id="numeros" class="bg-brand-dark text-white">
+    <div class="max-w-8xl mx-auto px-5 lg:px-8 py-14 grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="fade-in text-center lg:text-left">
+        <div class="text-4xl md:text-5xl font-extrabold text-brand-sky"><span class="counter" data-target="26">0</span><span class="text-brand-orange">+</span></div>
+        <p class="mt-2 text-white/70">anos a detectar fugas, desde 1999</p>
+      </div>
+      <div class="fade-in text-center lg:text-left">
+        <div class="text-4xl md:text-5xl font-extrabold text-brand-sky"><span class="counter" data-target="10">0</span></div>
+        <p class="mt-2 text-white/70">distritos com assistência técnica</p>
+      </div>
+      <div class="fade-in text-center lg:text-left">
+        <div class="text-4xl md:text-5xl font-extrabold text-brand-sky"><span class="counter" data-target="6">0</span></div>
+        <p class="mt-2 text-white/70">tecnologias de pesquisa</p>
+      </div>
+      <div class="fade-in text-center lg:text-left">
+        <div class="text-4xl md:text-5xl font-extrabold text-brand-sky">100<span class="text-brand-orange">%</span></div>
+        <p class="mt-2 text-white/70">garantia de sucesso no serviço</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problema → Solução -->
+  <section class="bg-white py-20 md:py-28">
+    <div class="max-w-8xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="fade-in">
+        <span class="text-brand-orange font-bold uppercase tracking-wider text-sm">O problema</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight text-brand-dark leading-tight">Mancha no tecto? Conta da água alta sem explicação?</h2>
+        <p class="mt-5 text-lg text-ink/70 leading-relaxed max-w-xl">Uma fuga escondida estraga paredes, soalhos e a relação com os vizinhos. A reparação tradicional parte tudo "à procura" — e nem sempre acerta.</p>
+        <ul class="mt-7 space-y-3">
+          <li class="flex items-start gap-3 text-ink/80"><span class="mt-1 w-5 h-5 grid place-items-center rounded-full bg-brand-orange/10 text-brand-orange shrink-0">✕</span> Humidade e bolor em paredes ou tectos</li>
+          <li class="flex items-start gap-3 text-ink/80"><span class="mt-1 w-5 h-5 grid place-items-center rounded-full bg-brand-orange/10 text-brand-orange shrink-0">✕</span> Pressão de água a cair, contador sempre a rodar</li>
+          <li class="flex items-start gap-3 text-ink/80"><span class="mt-1 w-5 h-5 grid place-items-center rounded-full bg-brand-orange/10 text-brand-orange shrink-0">✕</span> Infiltrações em garagens, terraços e piscinas</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <div class="rounded-3xl water-grad p-8 md:p-10 text-white shadow-xl shadow-brand-blue/20">
+          <span class="text-brand-sky font-bold uppercase tracking-wider text-sm">A nossa solução</span>
+          <h3 class="mt-3 text-2xl md:text-3xl font-bold leading-snug">Localizamos a origem exacta — depois reparamos.</h3>
+          <p class="mt-4 text-white/80 leading-relaxed">Usamos equipamento de pesquisa não-destrutivo para encontrar a fuga sem demolições desnecessárias. Só abrimos onde é mesmo preciso.</p>
+          <div class="mt-7 grid sm:grid-cols-3 gap-4">
+            <div class="rounded-2xl bg-white/10 border border-white/15 p-4"><div class="text-brand-sky text-2xl font-bold">01</div><div class="mt-1 text-sm text-white/85">Detecção</div></div>
+            <div class="rounded-2xl bg-white/10 border border-white/15 p-4"><div class="text-brand-sky text-2xl font-bold">02</div><div class="mt-1 text-sm text-white/85">Localização</div></div>
+            <div class="rounded-2xl bg-white/10 border border-white/15 p-4"><div class="text-brand-sky text-2xl font-bold">03</div><div class="mt-1 text-sm text-white/85">Reparação</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="bg-mist py-20 md:py-28">
+    <div class="max-w-8xl mx-auto px-5 lg:px-8">
+      <div class="fade-in max-w-2xl">
+        <span class="text-brand-blue font-bold uppercase tracking-wider text-sm">O que fazemos</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight text-brand-dark leading-tight">Seis formas de chegar à fuga.</h2>
+        <p class="mt-4 text-lg text-ink/70">Escolhemos a técnica certa — ou várias em conjunto — para cada caso.</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="svc-grid">
+        <!-- 1 -->
+        <a href="servicos.html#fluidos" data-tilt class="tilt group block rounded-3xl bg-white p-7 border border-brand-dark/5 shadow-sm hover:shadow-xl transition-shadow fade-in">
+          <div class="w-12 h-12 grid place-items-center rounded-2xl bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path d="M12 3c3 4 5 6.4 5 9a5 5 0 1 1-10 0c0-2.6 2-5 5-9z" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-bold text-brand-dark">Pesquisa com fluídos e químicos</h3>
+          <p class="mt-2 text-ink/65 leading-relaxed">Gás traçador certificado que revela o ponto exacto da fuga, mesmo em tubagem embutida.</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-brand-orange font-semibold text-sm">Ver detalhe <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+        </a>
+        <!-- 2 -->
+        <a href="servicos.html#acustica" data-tilt class="tilt group block rounded-3xl bg-white p-7 border border-brand-dark/5 shadow-sm hover:shadow-xl transition-shadow fade-in">
+          <div class="w-12 h-12 grid place-items-center rounded-2xl bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path d="M3 12h3l3-7 6 14 3-7h3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-bold text-brand-dark">Pesquisa electro-acústica</h3>
+          <p class="mt-2 text-ink/65 leading-relaxed">Microfones de solo amplificam o som da água sob pressão para ouvir a fuga onde o olho não chega.</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-brand-orange font-semibold text-sm">Ver detalhe <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+        </a>
+        <!-- 3 -->
+        <a href="servicos.html#termografia" data-tilt class="tilt group block rounded-3xl bg-white p-7 border border-brand-dark/5 shadow-sm hover:shadow-xl transition-shadow fade-in">
+          <div class="w-12 h-12 grid place-items-center rounded-2xl bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path d="M10 13.5V5a2 2 0 1 1 4 0v8.5a4 4 0 1 1-4 0z" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-bold text-brand-dark">Pesquisa termográfica</h3>
+          <p class="mt-2 text-ink/65 leading-relaxed">Câmara térmica e contraste de temperatura revelam o rasto da humidade em paredes e pavimentos.</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-brand-orange font-semibold text-sm">Ver detalhe <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+        </a>
+        <!-- 4 -->
+        <a href="servicos.html#video" data-tilt class="tilt group block rounded-3xl bg-white p-7 border border-brand-dark/5 shadow-sm hover:shadow-xl transition-shadow fade-in">
+          <div class="w-12 h-12 grid place-items-center rounded-2xl bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-bold text-brand-dark">Vídeo-inspecção</h3>
+          <p class="mt-2 text-ink/65 leading-relaxed">Câmara endoscópica percorre tubagens e colectores por dentro e mostra o problema em vídeo.</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-brand-orange font-semibold text-sm">Ver detalhe <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+        </a>
+        <!-- 5 -->
+        <a href="servicos.html#reparacoes" data-tilt class="tilt group block rounded-3xl bg-white p-7 border border-brand-dark/5 shadow-sm hover:shadow-xl transition-shadow fade-in">
+          <div class="w-12 h-12 grid place-items-center rounded-2xl bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path d="M14 7a4 4 0 0 0-5.3 5.3l-5 5a2 2 0 1 0 2.8 2.8l5-5A4 4 0 0 0 17 10l-3-3z" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-bold text-brand-dark">Reparações integradas</h3>
+          <p class="mt-2 text-ink/65 leading-relaxed">Detectar e reparar na mesma equipa. Resolvemos a fuga e deixamos tudo a funcionar.</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-brand-orange font-semibold text-sm">Ver detalhe <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+        </a>
+        <!-- 6 -->
+        <a href="servicos.html#pericias" data-tilt class="tilt group block rounded-3xl bg-white p-7 border border-brand-dark/5 shadow-sm hover:shadow-xl transition-shadow fade-in">
+          <div class="w-12 h-12 grid place-items-center rounded-2xl bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mt-5 text-xl font-bold text-brand-dark">Perícias técnicas</h3>
+          <p class="mt-2 text-ink/65 leading-relaxed">Relatórios periciais a instalações hidráulicas para seguros, condomínios e tribunais.</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-brand-orange font-semibold text-sm">Ver detalhe <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="bg-white py-20 md:py-28">
+    <div class="max-w-8xl mx-auto px-5 lg:px-8">
+      <div class="fade-in text-center max-w-2xl mx-auto">
+        <span class="text-brand-blue font-bold uppercase tracking-wider text-sm">Simples e sem stress</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight text-brand-dark">Como funciona</h2>
+      </div>
+      <div class="mt-14 grid md:grid-cols-3 gap-8 relative">
+        <div class="hidden md:block absolute top-9 left-[16%] right-[16%] h-px bg-gradient-to-r from-brand-sky/30 via-brand-blue/40 to-brand-sky/30"></div>
+        <div class="fade-in relative text-center">
+          <div class="mx-auto w-18 h-18 w-[72px] h-[72px] grid place-items-center rounded-2xl bg-brand-blue text-white text-2xl font-extrabold shadow-lg shadow-brand-blue/25">1</div>
+          <h3 class="mt-6 text-xl font-bold text-brand-dark">Descreve o problema</h3>
+          <p class="mt-2 text-ink/65 leading-relaxed max-w-xs mx-auto">Liga ou pede orçamento. Em minutos percebemos o que se passa.</p>
+        </div>
+        <div class="fade-in relative text-center">
+          <div class="mx-auto w-[72px] h-[72px] grid place-items-center rounded-2xl bg-brand-cyan text-white text-2xl font-extrabold shadow-lg shadow-brand-cyan/25">2</div>
+          <h3 class="mt-6 text-xl font-bold text-brand-dark">Detecção no local</h3>
+          <p class="mt-2 text-ink/65 leading-relaxed max-w-xs mx-auto">Vamos ao local com o equipamento e localizamos a origem exacta da fuga.</p>
+        </div>
+        <div class="fade-in relative text-center">
+          <div class="mx-auto w-[72px] h-[72px] grid place-items-center rounded-2xl bg-brand-orange text-white text-2xl font-extrabold shadow-lg shadow-brand-orange/25">3</div>
+          <h3 class="mt-6 text-xl font-bold text-brand-dark">Reparação garantida</h3>
+          <p class="mt-2 text-ink/65 leading-relaxed max-w-xs mx-auto">Reparamos com garantia de sucesso e deixamos tudo a funcionar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Porquê nós -->
+  <section id="porque" class="bg-brand-dark text-white py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-brand-blue/20 blur-3xl"></div>
+    <div class="max-w-8xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center relative">
+      <div class="fade-in">
+        <span class="text-brand-sky font-bold uppercase tracking-wider text-sm">Porquê Zero Fugas</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">Experiência que se nota no resultado.</h2>
+        <p class="mt-5 text-lg text-white/75 max-w-xl leading-relaxed">Desde 1999 que vivemos de uma só coisa: encontrar fugas que ninguém mais encontra. Técnicos credenciados, equipamento de precisão e a responsabilidade de quem dá garantia do que faz.</p>
+        <a href="contactos.html" class="mt-8 inline-flex items-center gap-2 bg-brand-orange text-white font-semibold px-6 py-3.5 rounded-full hover:-translate-y-0.5 transition-transform shadow-lg shadow-brand-orange/30">Pedir orçamento grátis →</a>
+      </div>
+      <div class="fade-in grid sm:grid-cols-2 gap-5">
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><div class="text-brand-sky text-3xl">⚙️</div><h3 class="mt-3 font-bold text-lg">Técnicos credenciados</h3><p class="mt-1.5 text-white/70 text-sm leading-relaxed">Equipa preparada e altamente especializada em detecção.</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><div class="text-brand-sky text-3xl">🛡️</div><h3 class="mt-3 font-bold text-lg">Garantia de sucesso</h3><p class="mt-1.5 text-white/70 text-sm leading-relaxed">Serviços efectuados com compromisso de resultado.</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><div class="text-brand-sky text-3xl">🧱</div><h3 class="mt-3 font-bold text-lg">Sem demolições</h3><p class="mt-1.5 text-white/70 text-sm leading-relaxed">Métodos não-destrutivos. Só abrimos onde for mesmo preciso.</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><div class="text-brand-sky text-3xl">📍</div><h3 class="mt-3 font-bold text-lg">Cobertura ibérica</h3><p class="mt-1.5 text-white/70 text-sm leading-relaxed">Do Norte a Lisboa e em toda a Península Ibérica.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cobertura -->
+  <section id="cobertura" class="bg-mist py-20 md:py-28">
+    <div class="max-w-8xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 fade-in">
+        <span class="text-brand-blue font-bold uppercase tracking-wider text-sm">Onde atendemos</span>
+        <h2 class="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight text-brand-dark leading-tight">Do Minho a Lisboa — e toda a Península.</h2>
+        <p class="mt-5 text-lg text-ink/70 leading-relaxed">Prestamos assistência técnica em todo o país e Espanha. Estes são os distritos onde chegamos mais depressa:</p>
+        <div class="mt-7 grid grid-cols-2 gap-2.5 max-w-md">
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Viana do Castelo</span>
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Braga</span>
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Vila Real</span>
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Grande Porto</span>
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Aveiro</span>
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Viseu</span>
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Coimbra</span>
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Leiria</span>
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Santarém</span>
+          <span class="flex items-center gap-2 text-ink/80"><span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Lisboa</span>
+        </div>
+      </div>
+      <div class="lg:col-span-7 fade-in">
+        <div class="rounded-3xl overflow-hidden shadow-xl border border-brand-dark/5">
+          <iframe title="Zero Fugas — R. Daciano Baptista Marques 245, Vila Nova de Gaia" src="https://www.openstreetmap.org/export/embed.html?bbox=-8.79%2C41.02%2C-8.49%2C41.26&layer=mapnik&marker=41.1414883%2C-8.6391831" class="w-full h-[380px] md:h-[460px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="relative water-grad py-20 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background:radial-gradient(circle at 20% 30%, rgba(117,202,235,.4), transparent 40%), radial-gradient(circle at 80% 70%, rgba(248,79,39,.3), transparent 45%)"></div>
+    <div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-center text-white">
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">Tem uma fuga? Falamos hoje.</h2>
+      <p class="mt-5 text-lg md:text-xl text-white/85 max-w-2xl mx-auto">Orçamento sem compromisso. Atendemos de Segunda a Sexta, das 9h às 19h.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+351914383288" class="inline-flex items-center justify-center gap-3 bg-brand-orange text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl hover:-translate-y-0.5 transition-transform active:scale-[0.98]">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.5 15.5 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+          914 383 288
+        </a>
+        <a href="contactos.html" class="inline-flex items-center justify-center gap-2 bg-white text-brand-blue font-bold text-lg px-8 py-4 rounded-full hover:-translate-y-0.5 transition-transform active:scale-[0.98]">Pedir orçamento online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-white/80">
+    <div class="max-w-8xl mx-auto px-5 lg:px-8 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex flex-col leading-none">
+          <span class="brand-word text-2xl md:text-3xl"><span class="brand-zero">ZERO</span><span class="text-white">FUGAS</span></span>
+          <span class="block text-[10px] uppercase tracking-[0.16em] font-bold text-brand-sky mt-1">Soluções de Engenharia</span>
+        </div>
+        <p class="mt-5 text-sm leading-relaxed text-white/60">Detecção e reparação de fugas de água desde 1999. Resultados garantidos em toda a Península Ibérica.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="https://www.facebook.com/zerofugas" target="_blank" rel="noopener" aria-label="Facebook — Zero Fugas" class="w-9 h-9 grid place-items-center rounded-full bg-white/10 hover:bg-brand-blue transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 grid place-items-center rounded-full bg-white/10 hover:bg-brand-blue transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 8.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5zm0 5.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm4.5-5.8a.8.8 0 1 1-1.6 0 .8.8 0 0 1 1.6 0zM12 6.2c1.9 0 2.1 0 2.9.05 1.9.1 2.8 1 2.9 2.9.04.8.05 1 .05 2.9s0 2.1-.05 2.9c-.1 1.9-1 2.8-2.9 2.9-.8.04-1 .05-2.9.05s-2.1 0-2.9-.05c-1.9-.1-2.8-1-2.9-2.9C6.2 14.1 6.2 13.9 6.2 12s0-2.1.05-2.9c.1-1.9 1-2.8 2.9-2.9.8-.04 1-.05 2.9-.05zM12 4.8c-2 0-2.2 0-3 .05-2.6.12-4 1.5-4.1 4.1C4.8 9.8 4.8 10 4.8 12s0 2.2.05 3c.12 2.6 1.5 4 4.1 4.1.8.05 1 .05 3 .05s2.2 0 3-.05c2.6-.12 4-1.5 4.1-4.1.05-.8.05-1 .05-3s0-2.2-.05-3c-.12-2.6-1.5-4-4.1-4.1-.8-.05-1-.05-3-.05z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4">Contactos</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="tel:+351914383288" class="hover:text-brand-sky transition-colors">📱 (+351) 914 383 288</a></li>
+          <li><a href="tel:+351229764533" class="hover:text-brand-sky transition-colors">☎ Porto: (+351) 229 764 533</a></li>
+          <li><a href="tel:+351210548301" class="hover:text-brand-sky transition-colors">☎ Lisboa: (+351) 210 548 301</a></li>
+          <li><a href="mailto:geral@zerofugas.com" class="hover:text-brand-sky transition-colors">✉ geral@zerofugas.com</a></li>
+          <li class="text-white/60 pt-1">🕐 Seg–Sex, 9h às 19h</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4">Moradas</h4>
+        <ul class="space-y-4 text-sm text-white/60">
+          <li><span class="text-brand-sky font-semibold block">Norte · V. N. Gaia</span>Rua Daciano Baptista Marques, 245 – 2º, 4400-617 S. Pedro da Afurada</li>
+          <li><span class="text-brand-sky font-semibold block">Norte · Lever</span>Rua José Moura e Sá, 200, 4415-660 Lever</li>
+          <li><span class="text-brand-sky font-semibold block">Sul · Lisboa</span>Av. da Liberdade, 110 – 1º, São José, 1269-046 Lisboa</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4">Navegação</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="index.html" class="hover:text-brand-sky transition-colors">Início</a></li>
+          <li><a href="servicos.html" class="hover:text-brand-sky transition-colors">Serviços</a></li>
+          <li><a href="index.html#cobertura" class="hover:text-brand-sky transition-colors">Cobertura</a></li>
+          <li><a href="contactos.html" class="hover:text-brand-sky transition-colors">Contactos</a></li>
+          <li><a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener" class="hover:text-brand-sky transition-colors">Livro de Reclamações</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-8xl mx-auto px-5 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
+        <p>© <span id="year">2026</span> Zero Fugas — Soluções de Engenharia. Todos os direitos reservados.</p>
+        <p class="flex gap-4"><a href="#" class="hover:text-white/80">Termos &amp; Condições</a><a href="#" class="hover:text-white/80">Política de Privacidade</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/351914383288?text=Ol%C3%A1%2C%20precisava%20de%20or%C3%A7amento%20para%20uma%20fuga%20de%20%C3%A1gua." target="_blank" rel="noopener" aria-label="WhatsApp" class="fixed bottom-5 right-5 z-50 w-14 h-14 grid place-items-center rounded-full bg-[#25D366] text-white shadow-xl hover:scale-110 transition-transform">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.06 24l1.68-6.13a11.8 11.8 0 0 1-1.58-5.92C.16 5.34 5.5 0 12.06 0a11.8 11.8 0 0 1 8.4 3.49 11.8 11.8 0 0 1 3.48 8.41c0 6.55-5.34 11.89-11.89 11.89a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13l.36.21a9.9 9.9 0 0 0 5.04 1.38h.01c5.45 0 9.88-4.43 9.88-9.88a9.8 9.8 0 0 0-2.9-6.99 9.8 9.8 0 0 0-6.98-2.9c-5.45 0-9.88 4.43-9.88 9.88a9.9 9.9 0 0 0 1.51 5.26l.24.38-1 3.64 3.72-.98zM17.4 14.3c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07a8.1 8.1 0 0 1-2.38-1.47 9 9 0 0 1-1.65-2.05c-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42z"/></svg>
+  </a>
+
+  <!-- Vanta WAVES -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Vanta WAVES — desktop only, respect reduced motion
+    (function () {
+      const el = document.getElementById('vanta-bg');
+      if (!el) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (window.innerWidth < 768) return;
+      if (!window.VANTA || !window.VANTA.WAVES) return;
+      VANTA.WAVES({
+        el: el,
+        mouseControls: true,
+        touchControls: false,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x0c4da2,
+        shininess: 35.0,
+        waveHeight: 18.0,
+        waveSpeed: 0.85,
+        zoom: 0.92
+      });
+    })();
+
+    // Fade-in on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach((el, i) => {
+      el.style.transitionDelay = (i % 3) * 80 + 'ms';
+      io.observe(el);
+    });
+
+    // Animated counters
+    const counterIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = +el.dataset.target;
+        const dur = 1400; const start = performance.now();
+        function step(now) {
+          const p = Math.min((now - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(eased * target);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        counterIO.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach((el) => counterIO.observe(el));
+
+    // Card tilt
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.innerWidth >= 768) {
+      document.querySelectorAll('[data-tilt]').forEach((card) => {
+        card.addEventListener('mousemove', (ev) => {
+          const r = card.getBoundingClientRect();
+          const x = (ev.clientX - r.left) / r.width - 0.5;
+          const y = (ev.clientY - r.top) / r.height - 0.5;
+          card.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-4px)`;
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Navbar solid on scroll
+    const navWrap = document.getElementById('nav');
+    function onScroll() {
+      navWrap.classList.toggle('scrolled', window.scrollY > 40);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>
